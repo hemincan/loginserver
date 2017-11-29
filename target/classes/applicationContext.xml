@@ -59,23 +59,24 @@
         <property name="mappingLocations" value="classpath:com/can/entity/*.hbm.xml"></property>
     </bean>  
     
-    <!-- 配置Spring声明式事务 -->
+    <!-- 配置Spring声明式事务 
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"></property>
-    </bean> 
-    <!-- 配置事务事务属性 -->
+    </bean> -->
+    <!-- 配置事务事务属性 
      <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="get*" read-only="true"/>
             <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>
-    <!-- 配置事务切点，并把切点和事务属性关联起来 -->
+    -->
+    <!-- 配置事务切点，并把切点和事务属性关联起来 
     <aop:config>
         <aop:pointcut expression="execution(* com.demo.ssm.daoImpl.*.*(..))" id="txPointcut"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
     </aop:config>
-    
+    -->
 
 </beans>
 
